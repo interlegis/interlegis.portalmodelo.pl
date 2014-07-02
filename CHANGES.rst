@@ -4,7 +4,8 @@ Changelog
 1.0a4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- O widget utilizado no campo ``birthday`` foi mudado (refs. https://colab.interlegis.leg.br/ticket/2927).
+  [hvelarde]
 
 
 1.0a3 (2014-04-25)

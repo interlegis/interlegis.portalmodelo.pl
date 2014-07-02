@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-
 from collective.z3cform.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield import DictRow
+from collective.z3cform.datetimewidget import DateFieldWidget
 from interlegis.portalmodelo.pl import _
 from interlegis.portalmodelo.pl.config import MAX_BIRTHDAY
 from interlegis.portalmodelo.pl.config import MIN_BIRTHDAY
@@ -59,6 +59,7 @@ class IParliamentarian(model.Schema):
         required=True,
     )
 
+    form.widget(birthday=DateFieldWidget)
     birthday = schema.Date(
         title=_(u'Birthday'),
         description=_(u''),

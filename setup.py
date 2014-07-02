@@ -39,6 +39,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'collective.z3cform.datagridfield',
+        'collective.z3cform.datetimewidget',
         'five.grok',
         'interlegis.portalmodelo.api',
         'plone.api',
