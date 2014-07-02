@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0a4 (unreleased)
+1.0b1 (2014-07-02)
 ------------------
 
 - O widget utilizado no campo ``birthday`` foi mudado (refs. https://colab.interlegis.leg.br/ticket/2927).
