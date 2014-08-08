@@ -6,6 +6,7 @@ from interlegis.portalmodelo.pl import _
 from interlegis.portalmodelo.pl.config import MAX_BIRTHDAY
 from interlegis.portalmodelo.pl.config import MIN_BIRTHDAY
 from interlegis.portalmodelo.pl.validators import check_birthday
+from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from plone.autoform import directives as form
 from plone.formwidget.contenttree import ObjPathSourceBinder
 from plone.namedfile.field import NamedBlobImage
@@ -69,6 +70,7 @@ class IParliamentarian(model.Schema):
         constraint=check_birthday,
     )
 
+    form.widget(description=WysiwygFieldWidget)
     description = schema.Text(
         title=_(u'Bio'),
         description=_(u''),

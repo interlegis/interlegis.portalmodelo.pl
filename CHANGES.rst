@@ -4,7 +4,8 @@ Changelog
 1.0b2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Alterado o widget do campo description (bio) de um parlamentar para WysiwygFieldWidget (refs. https://colab.interlegis.leg.br/ticket/2928).
+  [ericof]
 
 
 1.0b1 (2014-07-02)

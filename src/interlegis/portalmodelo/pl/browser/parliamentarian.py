@@ -5,6 +5,7 @@ from five import grok
 from interlegis.portalmodelo.pl.interfaces import IParliamentarian
 from interlegis.portalmodelo.pl.interfaces import ISAPLMenuItem
 from interlegis.portalmodelo.pl.utils import _get_legislatures
+from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from plone.directives import dexterity
 from plone.directives import form
 from Products.CMFCore.interfaces import IFolderish
@@ -38,6 +39,7 @@ class EditForm(form.EditForm):
     grok.context(IParliamentarian)
 
     fields = field.Fields(IParliamentarian)
+    fields['description'].widgetFactory = WysiwygFieldWidget
     fields['party_affiliation'].widgetFactory = DataGridFieldFactory
 
     def updateWidgets(self):
