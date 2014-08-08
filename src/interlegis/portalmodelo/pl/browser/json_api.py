@@ -52,7 +52,7 @@ class JSONView(grok.View):
                 if not hasattr(obj, name):
                     continue
                 value = getattr(obj, name)
-                fields[name] = type_cast(value)
+                fields[name] = type_cast(value, obj=obj)
             s.append(fields)
         return s
 

@@ -65,6 +65,7 @@ class ContentTypeTestCase(unittest.TestCase):
                 'address': u'Av. N2, Anexo E do Senado Federal, Brasilia/DF',
                 'birthday': '1943-01-09',
                 'description': u'Bruxo do Cosme Velho, escritor.',
+                'email': u'',
                 'full_name': u'Joaquim Maria Machado de Assis',
                 'image': '',
                 'party_affiliation': [{
@@ -73,6 +74,7 @@ class ContentTypeTestCase(unittest.TestCase):
                     'party': u'ABL',
                 }],
                 'postal_code': u'70165-900',
+                'site': u'',
                 'telephone': u'+55615553213',
                 'title': u'Machado de Assis',
                 'uri': 'http://nohost/plone/processo-legislativo/parlamentares/000000000001',
