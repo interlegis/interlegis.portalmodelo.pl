@@ -7,6 +7,12 @@ Changelog
 - Alterado o widget do campo description (bio) de um parlamentar para WysiwygFieldWidget (refs. https://colab.interlegis.leg.br/ticket/2928).
   [ericof]
 
+- Adicionado campo email para um parlamentar (refs. https://colab.interlegis.leg.br/ticket/2928).
+  [ericof]
+
+- Adicionado campo site para um parlamentar (refs. https://colab.interlegis.leg.br/ticket/2928).
+  [ericof]
+
 
 1.0b1 (2014-07-02)
 ------------------

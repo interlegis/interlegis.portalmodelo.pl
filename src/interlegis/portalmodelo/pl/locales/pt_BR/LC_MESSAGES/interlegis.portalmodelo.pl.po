@@ -67,6 +67,10 @@ msgstr "Data de desfiliação"
 msgid "Description"
 msgstr "Descrição"
 
+#: interlegis/portalmodelo/pl/interfaces.py:86
+msgid "E-mail"
+msgstr "E-mail"
+
 #: interlegis/portalmodelo/pl/interfaces.py:133
 msgid "End date"
 msgstr "Data final"
@@ -183,6 +187,10 @@ msgstr "Configuração do SAPL Sync"
 #: interlegis/portalmodelo/pl/profiles/default/types/Session.xml
 msgid "Session"
 msgstr "Sessão"
+
+#: interlegis/portalmodelo/pl/interfaces.py:92
+msgid "Site"
+msgstr "Site"
 
 #: interlegis/portalmodelo/pl/sync/controlpanel.py:28
 msgid "Settings for SAPL Sync Integration."

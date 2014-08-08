@@ -71,6 +71,10 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
+#: interlegis/portalmodelo/pl/interfaces.py:86
+msgid "E-mail"
+msgstr ""
+
 #: interlegis/portalmodelo/pl/interfaces.py:133
 msgid "End date"
 msgstr ""
@@ -190,6 +194,10 @@ msgstr ""
 
 #: interlegis/portalmodelo/pl/sync/controlpanel.py:28
 msgid "Settings for SAPL Sync Integration."
+msgstr ""
+
+#: interlegis/portalmodelo/pl/interfaces.py:92
+msgid "Site"
 msgstr ""
 
 #: interlegis/portalmodelo/pl/interfaces.py:127

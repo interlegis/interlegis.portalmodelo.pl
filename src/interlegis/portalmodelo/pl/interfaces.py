@@ -83,6 +83,18 @@ class IParliamentarian(model.Schema):
         required=False,
     )
 
+    email = schema.TextLine(
+        title=_(u'E-mail'),
+        description=_(u''),
+        required=False,
+    )
+
+    site = schema.TextLine(
+        title=_(u'Site'),
+        description=_(u''),
+        required=False,
+    )
+
     address = schema.TextLine(
         title=_(u'Address'),
         description=_(u''),

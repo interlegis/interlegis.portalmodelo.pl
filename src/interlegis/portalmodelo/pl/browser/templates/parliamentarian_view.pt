@@ -35,7 +35,7 @@
       </h3>
       <div>
         <label class="horizontal" i18n:translate="">Party</label>:
-        <span itemprop="memberOff" tal:content="context/get_party" />
+        <span itemprop="memberOf" tal:content="context/get_party" />
       </div>
       <div>
         <label class="horizontal" tal:content="structure view/w/birthday/label" />:
@@ -45,6 +45,22 @@
         <label class="horizontal" tal:content="structure view/w/telephone/label" />:
         <span itemprop="telephone" tal:content="structure view/w/telephone/render" />
       <div>
+      <div tal:condition="context/email">
+        <label class="horizontal" tal:content="structure view/w/email/label" />:
+        <a href="" 
+           tal:attributes="href string:mailto:${context/email}"
+           itemprop="email" tal:content="structure view/w/email/render" />
+      </div>
+      <div tal:condition="context/site">
+        <label class="horizontal" tal:content="structure view/w/site/label" />:
+        <a href="" 
+           tal:attributes="href context/site"
+           itemprop="url" tal:content="structure view/w/site/render" />
+      </div>
+      <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <label class="horizontal" tal:content="structure view/w/postal_code/label" />:
+        <span itemprop="postalCode" tal:content="structure view/w/postal_code/render" />
+      </div>
       <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
         <label class="horizontal" tal:content="structure view/w/address/label" />:
         <span itemprop="streetAddress" tal:content="structure view/w/address/render" />
