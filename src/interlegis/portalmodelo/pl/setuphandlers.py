@@ -72,7 +72,7 @@ def create_legislature_structure(site):
     api.content.transition(obj, 'publish')
 
     title = 'Mesa Diretora'
-    obj = api.content.create(folder, type='Link', title=title, remoteUrl='@@mesa-diretora')
+    obj = api.content.create(folder, type='Link', title=title, remoteUrl='../processo-legislativo/@@mesa-diretora')
     obj.setTitle(title)
     obj.reindexObject('Title')
     api.content.transition(obj, 'publish')

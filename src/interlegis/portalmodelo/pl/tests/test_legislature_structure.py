@@ -44,7 +44,7 @@ class LegislatureStructureTestCase(unittest.TestCase):
 
     def test_legislative_board_link(self):
         link = self.root['mesa-diretora']
-        self.assertEqual(link.remoteUrl, '@@mesa-diretora')
+        self.assertEqual(link.remoteUrl, '../processo-legislativo/@@mesa-diretora')
         self.assertEqual(api.content.get_state(link), 'published')
 
     def test_marker_interface_is_removed_at_uninstall(self):

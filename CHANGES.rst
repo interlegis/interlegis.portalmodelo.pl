@@ -4,6 +4,9 @@ Changelog
 1.0b2 (unreleased)
 ------------------
 
+- Fixing the @@mesa-diretora link for anonymous user access
+  [jeanferri]
+
 - Alterado o widget do campo description (bio) de um parlamentar para WysiwygFieldWidget (refs. https://colab.interlegis.leg.br/ticket/2928).
   [ericof]
 
