@@ -4,6 +4,9 @@ Changelog
 1.0b2 (unreleased)
 ------------------
 
+- Renamed opendata API URL from sapl-json to pl-json
+  [jeanferri]
+
 - Fixing the @@mesa-diretora link for anonymous user access
   [jeanferri]
 

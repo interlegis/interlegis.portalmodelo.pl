@@ -18,7 +18,7 @@ class JSONView(grok.View):
     """
     grok.context(IPloneSiteRoot)
     grok.require('zope2.View')
-    grok.name('sapl-json')
+    grok.name('pl-json')
 
     def render(self):
         self.request.response.setHeader('Content-Type', 'application/json')

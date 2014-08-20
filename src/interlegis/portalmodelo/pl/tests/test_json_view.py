@@ -18,7 +18,7 @@ class ContentTypeTestCase(unittest.TestCase):
         self.request = self.layer['request']
         self.maxDiff = None
         self.view = api.content.get_view(
-            name='sapl-json', context=self.portal, request=self.request)
+            name='pl-json', context=self.portal, request=self.request)
         with api.env.adopt_roles(['Manager']):
             self.load_data()
 

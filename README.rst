@@ -19,7 +19,7 @@ objetos dentro da estrutura de uma Câmara Legislativa:
 * Legistatura
 * Sessão legislativa
 
-O pacote também fornece uma view chamada ``@@sapl-json`` disponibilizada na
+O pacote também fornece uma view chamada ``@@pl-json`` disponibilizada na
 raiz do portal que retorna essa informação em formato JSON.
 
 Descrição dos tipos de conteúdo
