@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from collective.z3cform.datagridfield import DataGridFieldFactory
+from collective.z3cform.datagridfield import DataGridField, DataGridFieldFactory
 from five import grok
 from interlegis.portalmodelo.pl.interfaces import IParliamentarian
 from interlegis.portalmodelo.pl.interfaces import ISAPLMenuItem
@@ -43,7 +43,16 @@ class EditForm(form.EditForm):
     fields['party_affiliation'].widgetFactory = DataGridFieldFactory
 
     def updateWidgets(self):
-        super(EditForm, self).updateWidgets()
+        # WORKAROUND
+        # When DataGridField.auto_append == true a strange zodb serialization
+        # issue is raised during DataGridField.updateWidgets()
+        # We avoid this turning it off temporarily
+        try:
+            original_auto_append = DataGridField.auto_append
+            DataGridField.auto_append = False
+            super(EditForm, self).updateWidgets()
+        finally:
+            DataGridField.auto_append = original_auto_append
         self.widgets['party_affiliation'].allow_reorder = True
         self.widgets['party_affiliation'].auto_append = False
 
