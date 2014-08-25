@@ -28,7 +28,7 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
-    keywords='interlegis sapl plone portal_modelo',
+    keywords='interlegis sapl plone portalmodelo plone',
     author='Programa Interlegis',
     author_email='ti@interlegis.leg.br',
     url='https://github.com/interlegis/interlegis.portalmodelo.pl',
