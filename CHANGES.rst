@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0b2 (unreleased)
+1.0b2 (2014-08-25)
 ------------------
 
 - Corrige problema de serialização do DataGridField (refs. https://colab.interlegis.leg.br/ticket/2990)
