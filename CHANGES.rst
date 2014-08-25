@@ -4,10 +4,13 @@ Changelog
 1.0b2 (unreleased)
 ------------------
 
-- Renamed opendata API URL from sapl-json to pl-json
+- Corrige problema de serialização do DataGridField (refs. https://colab.interlegis.leg.br/ticket/2990)
+  [marciomazza]
+
+- Renomeia a URL da API Opendata de sapl-json para pl-json
   [jeanferri]
 
-- Fixing the @@mesa-diretora link for anonymous user access
+- Corrige o link @@mesa-diretora para usuários anônimos
   [jeanferri]
 
 - Alterado o widget do campo description (bio) de um parlamentar para WysiwygFieldWidget (refs. https://colab.interlegis.leg.br/ticket/2928).
