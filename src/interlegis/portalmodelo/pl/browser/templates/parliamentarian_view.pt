@@ -47,13 +47,13 @@
       <div>
       <div tal:condition="context/email">
         <label class="horizontal" tal:content="structure view/w/email/label" />:
-        <a href="" 
+        <a href=""
            tal:attributes="href string:mailto:${context/email}"
            itemprop="email" tal:content="structure view/w/email/render" />
       </div>
       <div tal:condition="context/site">
         <label class="horizontal" tal:content="structure view/w/site/label" />:
-        <a href="" 
+        <a href=""
            tal:attributes="href context/site"
            itemprop="url" tal:content="structure view/w/site/render" />
       </div>
@@ -74,6 +74,10 @@
         <span tal:content="python:'Active' if context.is_active else 'Inactive'"
             i18n:translate="" />
       </div>
+      <div>
+        <label class="horizontal" tal:content="structure view/w/party_affiliation/label" />:
+        <span itemprop="party_affiliation" tal:content="structure view/w/party_affiliation/render" />
+      <div>
       <label i18n:translate="">Legislatures</label>
       <ul tal:repeat="item context/get_legislatures">
         <li tal:content="item/long_title" />
