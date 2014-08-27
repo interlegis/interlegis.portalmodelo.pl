@@ -4,7 +4,8 @@ Changelog
 1.0b3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Added description to the folder structure.
+  [jeanferri]
 
 
 1.0b2 (2014-08-25)
