@@ -36,6 +36,7 @@ def create_legislature_structure(site):
     """
     logger.info(u'Criando estrutura da Legislatura')
     title = u'Processo Legislativo'
+    description = u'Seção que contém as informações relacionadas à atividade legislativa, parlamentares, legislatura atual e anteriores.'
     folder = getattr(site, 'processo-legislativo', None)
     if folder is None:
         logger.debug(u'Criando pasta {0}'.format(title))
@@ -43,7 +44,8 @@ def create_legislature_structure(site):
         # XXX: following two lines are a workaround for issue in plone.api
         #      see: https://github.com/plone/plone.api/issues/99
         obj.setTitle(title)
-        obj.reindexObject('Title')
+        obj.setDescription(description)
+        obj.reindexObject()
         folder = obj
     elif IFolderish.providedBy(folder):
         logger.debug(u'Pasta {0} existente; pulando criação'.format(title))
@@ -55,9 +57,11 @@ def create_legislature_structure(site):
 
     # TODO: deal with existing objects here also
     title = 'Parlamentares'
+    description = u'Relação de parlamentares diplomados em cada legislatura.'
     obj = api.content.create(folder, type='Folder', title=title)
     obj.setTitle(title)
-    obj.reindexObject('Title')
+    obj.setDescription(description)
+    obj.reindexObject()
     constrain_types(obj, 'Parliamentarian')
     # enable display menu item on this folder
     directlyProvides(obj, ISAPLMenuItem)
@@ -65,18 +69,30 @@ def create_legislature_structure(site):
     api.content.transition(obj, 'publish')
 
     title = 'Legislaturas'
+    description = u'Relação de legislaturas e seus parlamentares, com as respectivas sessões legislativas.'
     obj = api.content.create(folder, type='Folder', title=title)
     obj.setTitle(title)
-    obj.reindexObject('Title')
+    obj.setDescription(description)
+    obj.reindexObject()
     constrain_types(obj, 'Legislature')
     api.content.transition(obj, 'publish')
 
     title = 'Mesa Diretora'
+    description = u'Membros da mesa diretora desta Casa Legislativa, relacionados por cada sessão legislativa.'
     obj = api.content.create(folder, type='Link', title=title, remoteUrl='../processo-legislativo/@@mesa-diretora')
     obj.setTitle(title)
-    obj.reindexObject('Title')
+    obj.setDescription(description)
+    obj.reindexObject()
     api.content.transition(obj, 'publish')
     logger.debug(u'Estrutura criada e publicada')
+
+    #title = 'Comissões'
+    #description = u'Relação de comissões (permantentes, especiais, etc) desta Casa Legislativa.'
+    #obj = api.content.create(folder, type='Folder', title=title)
+    #obj.setTitle(title)
+    #obj.setDescription(description)
+    #obj.reindexObject()
+    #api.content.transition(obj, 'publish')
 
 
 def setup_various(context):
