@@ -83,16 +83,15 @@ class TestUpgrade(BaseTestCase):
 class UninstallTestCase(BaseTestCase):
     """Ensure product is properly uninstalled."""
 
-    def setUp(self):
-        BaseTestCase.setUp(self)
-        self.qi.uninstallProducts(products=[PROJECTNAME])
-
     def test_uninstalled(self):
+        self.qi.uninstallProducts(products=[PROJECTNAME])
         self.assertFalse(self.qi.isProductInstalled(PROJECTNAME))
 
     def test_browser_layer_removed_uninstalled(self):
+        self.qi.uninstallProducts(products=[PROJECTNAME])
         self.assertNotIn(IBrowserLayer, registered_layers())
 
     def test_parliamentarians_view_removed(self):
+        self.qi.uninstallProducts(products=[PROJECTNAME])
         folder_views = self.types['Folder'].view_methods
         self.assertNotIn('parliamentarians', folder_views)
