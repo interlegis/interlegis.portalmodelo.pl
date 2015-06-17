@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Try to fix year for date_affiliation in parlamentarian profile
+  [jeanferri]
+
 - Fix test test_setup.py
   [marciomazza]
 

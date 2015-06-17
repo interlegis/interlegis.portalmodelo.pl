@@ -5,6 +5,7 @@ from collective.z3cform.datetimewidget import DateFieldWidget
 from interlegis.portalmodelo.pl import _
 from interlegis.portalmodelo.pl.config import MAX_BIRTHDAY
 from interlegis.portalmodelo.pl.config import MIN_BIRTHDAY
+from interlegis.portalmodelo.pl.config import START_REPUBLIC_BRAZIL
 from interlegis.portalmodelo.pl.validators import check_birthday
 from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from plone.autoform import directives as form
@@ -36,11 +37,13 @@ class IPartyAffiliationItem(model.Schema):
 
     date_affiliation = schema.Date(
         title=_(u'Date of affiliation'),
+        min=START_REPUBLIC_BRAZIL,
         required=True,
     )
 
     date_disaffiliation = schema.Date(
         title=_(u'Date of disaffiliation'),
+        min=START_REPUBLIC_BRAZIL,
         required=False,
     )
 
