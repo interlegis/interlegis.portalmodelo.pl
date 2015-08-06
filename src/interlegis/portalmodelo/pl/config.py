@@ -4,6 +4,7 @@ from datetime import date
 from datetime import timedelta
 
 PROJECTNAME = 'interlegis.portalmodelo.pl'
+CREATORS = (u'Interlegis', )
 
 # these constants must be date objects
 NOW = date.today()

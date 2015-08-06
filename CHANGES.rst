@@ -4,7 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Add 'Comissões' folder to 'Processo Legislativo' menu
+  [jeanferri]
 
 
 1.0rc1 (2015-06-17)

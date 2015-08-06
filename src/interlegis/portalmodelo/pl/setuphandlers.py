@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from interlegis.portalmodelo.pl.config import PROJECTNAME
+from interlegis.portalmodelo.pl.config import CREATORS
 from interlegis.portalmodelo.pl.interfaces import ISAPLMenuItem
 from plone import api
 from Products.CMFCore.interfaces import IFolderish
@@ -45,6 +46,7 @@ def create_legislature_structure(site):
         #      see: https://github.com/plone/plone.api/issues/99
         obj.setTitle(title)
         obj.setDescription(description)
+        obj.setCreators(CREATORS)
         obj.reindexObject()
         folder = obj
     elif IFolderish.providedBy(folder):
@@ -61,6 +63,7 @@ def create_legislature_structure(site):
     obj = api.content.create(folder, type='Folder', title=title)
     obj.setTitle(title)
     obj.setDescription(description)
+    obj.setCreators(CREATORS)
     obj.reindexObject()
     constrain_types(obj, 'Parliamentarian')
     # enable display menu item on this folder
@@ -73,6 +76,7 @@ def create_legislature_structure(site):
     obj = api.content.create(folder, type='Folder', title=title)
     obj.setTitle(title)
     obj.setDescription(description)
+    obj.setCreators(CREATORS)
     obj.reindexObject()
     constrain_types(obj, 'Legislature')
     api.content.transition(obj, 'publish')
@@ -82,17 +86,19 @@ def create_legislature_structure(site):
     obj = api.content.create(folder, type='Link', title=title, remoteUrl='../processo-legislativo/@@mesa-diretora')
     obj.setTitle(title)
     obj.setDescription(description)
+    obj.setCreators(CREATORS)
     obj.reindexObject()
     api.content.transition(obj, 'publish')
     logger.debug(u'Estrutura criada e publicada')
 
-    #title = 'Comissões'
-    #description = u'Relação de comissões (permantentes, especiais, etc) desta Casa Legislativa.'
-    #obj = api.content.create(folder, type='Folder', title=title)
-    #obj.setTitle(title)
-    #obj.setDescription(description)
-    #obj.reindexObject()
-    #api.content.transition(obj, 'publish')
+    title = 'Comissões'
+    description = u'Relação de comissões (permantentes, especiais, etc) desta Casa Legislativa.'
+    obj = api.content.create(folder, type='Folder', title=title)
+    obj.setTitle(title)
+    obj.setDescription(description)
+    obj.setCreators(CREATORS)
+    obj.reindexObject()
+    api.content.transition(obj, 'publish')
 
 
 def setup_various(context):
