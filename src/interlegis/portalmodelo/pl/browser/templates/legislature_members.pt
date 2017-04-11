@@ -50,8 +50,6 @@
             <span itemprop="name" tal:content="member/full_name" />
             - <span class="party" itemprop="memberOff"
                 tal:content="member/get_party" />
-            <span class="position" itemprop="jobTitle"
-                tal:content="python:view.get_position(member)" />
                 </span>
           </a>
         </li>
