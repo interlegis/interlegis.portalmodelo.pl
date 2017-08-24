@@ -37,6 +37,7 @@ class AddForm(form.AddForm):
 class EditForm(form.EditForm):
     grok.name('edit')
     grok.context(IParliamentarian)
+    grok.require('cmf.ModifyPortalContent')
 
     fields = field.Fields(IParliamentarian)
     fields['description'].widgetFactory = WysiwygFieldWidget
