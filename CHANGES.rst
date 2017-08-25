@@ -4,7 +4,8 @@ Changelog
 1.0rc3 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Add permission to fix parliamentarian edit form
+  [rafahela]
 
 
 1.0rc2 (2015-08-26)
