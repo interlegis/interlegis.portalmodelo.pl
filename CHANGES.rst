@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0rc3 (unreleased)
+1.0rc3 (2017-08-25)
 -------------------
 
 - Add permission to fix parliamentarian edit form
