@@ -2,6 +2,7 @@
 from collective.z3cform.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield import DictRow
 from collective.z3cform.datetimewidget import DateFieldWidget
+from datetime import date
 from interlegis.portalmodelo.pl import _
 from interlegis.portalmodelo.pl.config import MAX_BIRTHDAY
 from interlegis.portalmodelo.pl.config import MIN_BIRTHDAY
@@ -10,13 +11,16 @@ from interlegis.portalmodelo.pl.validators import check_birthday
 from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from plone.autoform import directives as form
 from plone.formwidget.contenttree import ObjPathSourceBinder
+from plone.formwidget.datetime.z3cform import DateWidget
 from plone.namedfile.field import NamedBlobImage
 from plone.supermodel import model
 from z3c.relationfield.schema import RelationChoice
 from z3c.relationfield.schema import RelationList
 from zope import schema
 from zope.interface import Interface
-
+from z3c.form.interfaces import IFieldWidget
+from z3c.form.widget import FieldWidget
+from zope.interface import implementer
 
 class IBrowserLayer(Interface):
     """Add-on specific layer."""
@@ -24,6 +28,15 @@ class IBrowserLayer(Interface):
 
 class ISAPLMenuItem(Interface):
     """Marker interface to add a menu item on the display menu."""
+
+
+@implementer(IFieldWidget)
+def DateFieldWidget(field, request):
+    widget = FieldWidget(field, DateWidget(request))
+    start = -(date.today().year - 1930)
+    end = 1
+    widget.years_range = (start, end)
+    return widget
 
 
 # TODO: validate date_affiliation < date_disaffiliation
@@ -35,12 +48,14 @@ class IPartyAffiliationItem(model.Schema):
         required=True,
     )
 
+    form.widget(date_affiliation=DateFieldWidget)
     date_affiliation = schema.Date(
         title=_(u'Date of affiliation'),
         min=START_REPUBLIC_BRAZIL,
         required=True,
     )
 
+    form.widget(date_disaffiliation=DateFieldWidget)
     date_disaffiliation = schema.Date(
         title=_(u'Date of disaffiliation'),
         min=START_REPUBLIC_BRAZIL,
