@@ -21,11 +21,17 @@
           />
     </select>
 
+    <option value=""
+          tal:repeat="item view/parliamentarians"
+          tal:content="item/Title"
+          tal:attributes="value item/UID;"
+        />
+
     <div id="content-core">
       <h2 i18n:translate="active_plural">Active</h2>
 
       <ul class="listing">
-        <li class="parliamentarian" itemscope itemtype="http://schema.org/Person">
+        <li class="parliamentarian" itemscope itemtype="https://schema.org/Person">
           <a href="">
             <img class="" itemprop="image" src="spinner.gif" />
             <span itemprop="name">Full Name</span>
