@@ -2,10 +2,8 @@
 from collective.z3cform.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield import DictRow
 from collective.z3cform.datetimewidget import DateFieldWidget
-from datetime import date
+from datetime import datetime
 from interlegis.portalmodelo.pl import _
-from interlegis.portalmodelo.pl.config import MAX_BIRTHDAY
-from interlegis.portalmodelo.pl.config import MIN_BIRTHDAY
 from interlegis.portalmodelo.pl.config import START_REPUBLIC_BRAZIL
 from interlegis.portalmodelo.pl.validators import check_birthday
 from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
@@ -22,6 +20,7 @@ from z3c.form.interfaces import IFieldWidget
 from z3c.form.widget import FieldWidget
 from zope.interface import implementer
 
+
 class IBrowserLayer(Interface):
     """Add-on specific layer."""
 
@@ -33,9 +32,10 @@ class ISAPLMenuItem(Interface):
 @implementer(IFieldWidget)
 def DateFieldWidget(field, request):
     widget = FieldWidget(field, DateWidget(request))
-    start = -(date.today().year - 1930)
-    end = 1
-    widget.years_range = (start, end)
+    now = datetime.now()
+    min_year = -now.year + 1930
+    widget.years_range = (min_year, 10)
+    widget.update()
     return widget
 
 
@@ -52,7 +52,7 @@ class IPartyAffiliationItem(model.Schema):
     date_affiliation = schema.Date(
         title=_(u'Date of affiliation'),
         min=START_REPUBLIC_BRAZIL,
-        required=True,
+        required=False,
     )
 
     form.widget(date_disaffiliation=DateFieldWidget)
@@ -81,11 +81,8 @@ class IParliamentarian(model.Schema):
     form.widget(birthday=DateFieldWidget)
     birthday = schema.Date(
         title=_(u'Birthday'),
-        description=_(u''),
-        required=True,
-        max=MAX_BIRTHDAY,
-        min=MIN_BIRTHDAY,
         constraint=check_birthday,
+        required=True,
     )
 
     form.widget(description=WysiwygFieldWidget)

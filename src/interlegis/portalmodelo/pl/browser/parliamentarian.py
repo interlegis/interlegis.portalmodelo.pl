@@ -2,7 +2,7 @@
 
 from collective.z3cform.datagridfield import DataGridField, DataGridFieldFactory
 from five import grok
-from interlegis.portalmodelo.pl.interfaces import IParliamentarian
+from interlegis.portalmodelo.pl.interfaces import IParliamentarian, DateFieldWidget
 from interlegis.portalmodelo.pl.interfaces import ISAPLMenuItem
 from interlegis.portalmodelo.pl.utils import _get_legislatures
 from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
@@ -42,6 +42,7 @@ class EditForm(form.EditForm):
     fields = field.Fields(IParliamentarian)
     fields['description'].widgetFactory = WysiwygFieldWidget
     fields['party_affiliation'].widgetFactory = DataGridFieldFactory
+    fields['birthday'].widgetFactory = DateFieldWidget
 
     def updateWidgets(self):
         # WORKAROUND
@@ -54,8 +55,8 @@ class EditForm(form.EditForm):
             super(EditForm, self).updateWidgets()
         finally:
             DataGridField.auto_append = original_auto_append
-        self.widgets['party_affiliation'].allow_reorder = True
-        self.widgets['party_affiliation'].auto_append = False
+            self.widgets['party_affiliation'].allow_reorder = True
+            self.widgets['party_affiliation'].auto_append = False
 
 
 class Parliamentarians(grok.View):
