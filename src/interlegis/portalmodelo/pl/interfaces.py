@@ -4,7 +4,7 @@ from collective.z3cform.datagridfield import DictRow
 from collective.z3cform.datetimewidget import DateFieldWidget
 from datetime import datetime
 from interlegis.portalmodelo.pl import _
-from interlegis.portalmodelo.pl.config import START_REPUBLIC_BRAZIL
+from interlegis.portalmodelo.pl.config import START_REPUBLIC_BRAZIL, MIN_BIRTHDAY, MAX_BIRTHDAY
 from interlegis.portalmodelo.pl.validators import check_birthday
 from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from plone.autoform import directives as form
@@ -83,6 +83,8 @@ class IParliamentarian(model.Schema):
         title=_(u'Birthday'),
         constraint=check_birthday,
         required=True,
+        min=MIN_BIRTHDAY,
+        max=MAX_BIRTHDAY,
     )
 
     form.widget(description=WysiwygFieldWidget)
