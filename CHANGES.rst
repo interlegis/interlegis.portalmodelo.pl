@@ -1,10 +1,11 @@
 Changelog
 =========
 
-1.0rc4 (unreleased)
+1.0rc4 (2018-01-16)
 -------------------
 
-- Nothing changed yet.
+- Correct calendar range
+  [IolaneAndrade]
 
 
 1.0rc3 (2017-08-25)
