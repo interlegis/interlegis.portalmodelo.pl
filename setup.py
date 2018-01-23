@@ -68,7 +68,8 @@ setup(
         'zope.i18nmessageid',
         'zope.interface',
         'zope.intid',
-        'zope.schema', 'DateTime', 'zope',
+        'zope.schema',
+        'DateTime',
     ],
     extras_require={
         'test': [
