@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0rc5 (unreleased)
+1.0rc5 (2018-02-01)
 -------------------
 
 - Nothing changed yet.
