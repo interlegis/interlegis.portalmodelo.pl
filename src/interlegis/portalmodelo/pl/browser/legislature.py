@@ -22,13 +22,16 @@ class Legislature_View(dexterity.DisplayForm):
         results = []
         for member in self.context.members:
             obj = member.to_object
-            results.append(dict(
-                full_name=obj.full_name,
-                url=obj.absolute_url(),
-                name=obj.title,
-                party=obj.get_party(),
-                status=_(u'Active') if obj.is_active else _(u'Inactive'),
-            ))
+            if obj is not None:
+                results.append(dict(
+                    full_name=obj.full_name,
+                    url=obj.absolute_url(),
+                    name=obj.title,
+                    party=obj.get_party(),
+                    status=_(u'Active') if obj.is_active else _(u'Inactive'),
+                ))
+            else:
+                continue
 
         return results
 
@@ -53,8 +56,14 @@ class Legislature_Members(grok.View):
         if self.legislature is not None:
             members = self.legislature.get_legislature_members()
             by_status = {}
-            by_status['active'] = [i for i in members if i.is_active]
-            by_status['inactive'] = [i for i in members if not i.is_active]
+            by_status['active'] = []
+            for i in members:
+                if i is not None and i.is_active:
+                    by_status['active'].append(i)
+            by_status['inactive'] = []
+            for j in members:
+                if j is not None and not j.is_active:
+                    by_status['inactive'].append(j)
             return by_status
 
 
@@ -80,3 +89,4 @@ class Legislatures(grok.View):
                     self.OPTION.format(item.UID(), item.long_title))
 
         return u'\n'.join(options)
+

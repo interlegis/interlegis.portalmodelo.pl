@@ -49,7 +49,7 @@ class IPartyAffiliationItem(model.Schema):
     date_affiliation = schema.Date(
         title=_(u'Date of affiliation'),
         min=START_REPUBLIC_BRAZIL,
-        required=False,
+        required=True,
     )
 
     form.widget(date_disaffiliation=DateFieldWidget)
