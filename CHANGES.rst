@@ -1,10 +1,11 @@
 Changelog
 =========
 
-1.0rc6 (unreleased)
+1.0rc6 (2018-02-23)
 -------------------
 
-- Nothing changed yet.
+- Fix error when deleting a parliamentarian from a legislature 
+  [IolaneAndrade]
 
 
 1.0rc5 (2018-02-01)
