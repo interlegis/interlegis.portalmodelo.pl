@@ -4,7 +4,8 @@ Changelog
 1.0rc7 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Fix legislature date range and change variable name to be more generic.
+  [rafahela]
 
 
 1.0rc6 (2018-02-23)
