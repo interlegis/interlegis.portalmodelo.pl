@@ -156,8 +156,6 @@ class ILegislature(model.Schema):
         title=_(u'Start date'),
         description=_(u''),
         required=True,
-        min=MIN_DATE,
-        max=MAX_DATE,
     )
 
     form.widget(end_date=DateFieldWidget)
@@ -165,8 +163,6 @@ class ILegislature(model.Schema):
         title=_(u'End date'),
         description=_(u''),
         required=True,
-        min=MIN_DATE,
-        max=MAX_DATE,
     )
 
     members = RelationList(
