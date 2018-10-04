@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0rc7 (unreleased)
+1.0rc7 (2018-10-04)
 -------------------
 
 - Fix legislature date range and change variable name to be more generic.
