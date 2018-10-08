@@ -156,6 +156,6 @@ Algumas considerações sobre o formato adotado:
 
 
 Contribuindo
-------------
+============
 
 Para contribuir com o projeto, por favor, leia o `CONTRIBUTING <https://github.com/interlegis/interlegis.portalmodelo.pl/blob/master/.github/CONTRIBUTING.md>`_.
