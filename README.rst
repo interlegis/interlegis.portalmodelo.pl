@@ -153,3 +153,9 @@ Algumas considerações sobre o formato adotado:
 * Imagens serão referenciadas a partir de sua URL completa. Este pacote realizará o download delas.
 
 .. _`Sistema de Apoio ao Processo Legislativo`: https://colab.interlegis.leg.br/wiki/ProjetoSapl
+
+
+Contribuindo
+------------
+
+Para contribuir com o projeto, por favor, leia o `CONTRIBUTING <https://github.com/interlegis/interlegis.portalmodelo.pl/blob/master/.github/CONTRIBUTING.md>`_.
