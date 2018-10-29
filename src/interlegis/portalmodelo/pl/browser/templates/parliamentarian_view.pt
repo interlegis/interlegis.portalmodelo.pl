@@ -58,10 +58,6 @@
            itemprop="url" tal:content="structure view/w/site/render" />
       </div>
       <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-        <label class="horizontal" tal:content="structure view/w/postal_code/label" />:
-        <span itemprop="postalCode" tal:content="structure view/w/postal_code/render" />
-      </div>
-      <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
         <label class="horizontal" tal:content="structure view/w/address/label" />:
         <span itemprop="streetAddress" tal:content="structure view/w/address/render" />
       </div>
