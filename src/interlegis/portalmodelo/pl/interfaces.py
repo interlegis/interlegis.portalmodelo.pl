@@ -215,12 +215,14 @@ class ISession(model.Schema):
         required=False,
     )
 
+    form.widget(start_date=DateFieldWidget)
     start_date = schema.Date(
         title=_(u'Start date'),
         description=_(u''),
         required=True,
     )
 
+    form.widget(end_date=DateFieldWidget)
     end_date = schema.Date(
         title=_(u'End date'),
         description=_(u''),
