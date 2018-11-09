@@ -4,7 +4,7 @@ Changelog
 1.0rc8 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Fixed up the Session date range. [Iolane Andrade]
 
 
 1.0rc7 (2018-10-04)
