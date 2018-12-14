@@ -1,10 +1,11 @@
 Changelog
 =========
 
-1.0rc8 (unreleased)
+1.0rc8 (2018-12-14)
 -------------------
 
-- Fixed up the Session date range. [Iolane Andrade]
+- Fix the Session date range.
+  [Iolane Andrade]
 
 
 1.0rc7 (2018-10-04)
